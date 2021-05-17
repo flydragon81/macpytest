@@ -43,6 +43,7 @@ class Reader(threading.Thread):
             if parsed:
                 if parsed[8]:
                     chan = int(parsed[9]) - int(parsed[8]) + 1
+                    #print(parsed[9], parsed[8])
                     sn = sn + chan
             # print(line)
             '''

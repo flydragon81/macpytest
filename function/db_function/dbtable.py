@@ -71,6 +71,17 @@ class Template(Base):
                % (self.id, self.sline, self.spoint, self.sidx, self.from_ch, self.to_ch, self.rline, self.from_rp,
                   self.to_rp, self.ridx, self.temp_id)
 
+class Valid(Base):
+    __tablename__ = 'Valid'
+    sline = Column(Float, primary_key=True)
+    spoint = Column(Float, primary_key=True)
+    sidx = Column(Integer)
+    ffid = Column(Integer)
+
+    def __repr__(self):
+        return "X sline:%10.1f spoint:%10.1f sidx:%d ffid:%d" \
+               % (self.sline, self.spoint, self.sidx, self.ffid)
+
 
 def table_create(engine):
     try:
